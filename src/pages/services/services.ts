@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { HttpProvider } from '../../providers/http/http';
-import { AlertController } from 'ionic-angular';
+import { GlobalData } from '../../providers/globaldata/globaldata';
 
 import { FormsPage } from '../forms/forms';
 
@@ -15,7 +15,7 @@ export class ServicesPage {
 	
 	services: any;
 	
-	constructor(public navCtrl: NavController, private httpProvider: HttpProvider, public alertCtrl: AlertController) {
+	constructor(public navCtrl: NavController, private httpProvider: HttpProvider, public globalData: GlobalData) {
 		this.getdata();
 	}
   
@@ -34,8 +34,8 @@ export class ServicesPage {
 	 *	Test
 	 */
 	serviceClicked(serviceData) {
-
-		this.navCtrl.push(FormsPage, serviceData);
-		//this.navCtrl.parent.select(1);
+		console.log(serviceData);
+		this.globalData.addGlobalData(serviceData);
+		this.navCtrl.parent.select(1);
 	}
 }

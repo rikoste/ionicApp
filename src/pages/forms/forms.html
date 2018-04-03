@@ -7,5 +7,10 @@
 </ion-header>
 
 <ion-content padding>
-
+	<ion-list>
+		<!--<ion-input ion-item text-wrap *ngFor="let item of data">
+			{{item.section}}
+		</ion-input>-->
+		<div item-content *ngFor="let item of data">{{item.section}}</div>
+	</ion-list>
 </ion-content>

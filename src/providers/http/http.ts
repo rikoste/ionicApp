@@ -13,11 +13,10 @@ import 'rxjs/add/operator/map'
 export class HttpProvider {
 
 	constructor(public http: Http) {
-	console.log('Hello HttpProvider Provider');
 	}
 
 	getJsonData(){
-	return this.http.get('assets/service.json').map(res => res.json());
+		return this.http.get('assets/service.json').map(res => res.json());
 	}
 
 }

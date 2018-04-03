@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { GlobalData } from '../../providers/globaldata/globaldata';
 
 @Component({
   selector: 'page-forms',
@@ -7,12 +8,15 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class FormsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+	data: any;
 
+  constructor(public navCtrl: NavController, public navParams: NavParams, public globalData: GlobalData) {
+  	//this.data = [];
   }
 
   ionViewDidLoad(){
-  	console.log(this.navParams);
+  	this.data = this.globalData.getGlobalData();
+  	console.log(this.data);
   }
 
 }

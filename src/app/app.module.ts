@@ -15,6 +15,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpProvider } from '../providers/http/http';
+import { GlobalData } from '../providers/globaldata/globaldata';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { HttpProvider } from '../providers/http/http';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    HttpProvider
+    HttpProvider,
+    GlobalData
   ]
 })
 export class AppModule {}
