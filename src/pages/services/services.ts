@@ -3,6 +3,8 @@ import { NavController } from 'ionic-angular';
 import { HttpProvider } from '../../providers/http/http';
 import { AlertController } from 'ionic-angular';
 
+import { FormsPage } from '../forms/forms';
+
 @Component({
   selector: 'page-services',
   templateUrl: 'services.html',
@@ -24,20 +26,16 @@ export class ServicesPage {
 	  this.httpProvider.getJsonData().subscribe(
 		result => {
 		  this.services = result.service;
-		  console.log("Success : " + this.services);
 		}
 	  );
 	}
 	
 	/**
-	 *	Test : affichage d'une alerte
+	 *	Test
 	 */
-	showAlert(service) {
-		let alert = this.alertCtrl.create({
-			title: 'Test !',
-			subTitle: 'Tu as cliqué sur un service !',
-			buttons: ['Ok']
-		});
-		alert.present();
+	serviceClicked(serviceData) {
+
+		this.navCtrl.push(FormsPage, serviceData);
+		//this.navCtrl.parent.select(1);
 	}
 }

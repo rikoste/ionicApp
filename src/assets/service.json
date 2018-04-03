@@ -22,13 +22,7 @@
 				{
 					"section": "info",
 					"type": "radioButton",
-					"value": "Homme",
-					"mandatory": "false"
-				},
-				{
-					"section": "info",
-					"type": "radioButton",
-					"value": "Femme",
+					"value": ["Homme","femme"],
 					"mandatory": "false"
 				},
 				{
@@ -46,19 +40,7 @@
 				{
 					"section": "abonnement",
 					"type": "radioButton",
-					"value": "3 mois",
-					"mandatory": "true"
-				},
-				{
-					"section": "abonnement",
-					"type": "radioButton",
-					"value": "6 mois",
-					"mandatory": "true"
-				},
-				{
-					"section": "abonnement",
-					"type": "radioButton",
-					"value": "1 an",
+					"value": ["3 mois", "6 mois", "1 an"],
 					"mandatory": "true"
 				},
 				{
@@ -122,19 +104,7 @@
 				{
 					"section": "abonnement",
 					"type": "radioButton",
-					"value": "3 mois",
-					"mandatory": "true"
-				},
-				{
-					"section": "abonnement",
-					"type": "radioButton",
-					"value": "6 mois",
-					"mandatory": "true"
-				},
-				{
-					"section": "abonnement",
-					"type": "radioButton",
-					"value": "1 an",
+					"value": ["3 mois", "6 mois", "1 an"],
 					"mandatory": "true"
 				},
 				{
