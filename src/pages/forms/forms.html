@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content padding>
-	<ion-list>
+	<form>
 
 		<div text-wrap *ngFor="let item of data">
 
@@ -29,7 +29,6 @@
 							<ion-item>
 								<ion-label>{{choice}}</ion-label>
 						    	<ion-radio value="{{choice}}"></ion-radio>
-
 						    </ion-item>
 						</div>
 					</ion-list>
@@ -52,5 +51,6 @@
 
 		</div>
 
-	</ion-list>
+		<button ion-button type="submit" block>S'inscrire</button>
+    </form>
 </ion-content>
