@@ -7,6 +7,9 @@
 <ion-content padding>
 	<ion-list >
 		<button ion-item text-wrap *ngFor="let item of services" (click)="serviceClicked(item.title, item.elements)">
+		    <ion-avatar item-start>
+		      <img src="{{item.elements[0].value}}">
+		    </ion-avatar>
 			{{item.title}}
 		</button>
 	</ion-list>
