@@ -1,16 +1,56 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Forms
+      {{title}}
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 	<ion-list>
-		<!--<ion-input ion-item text-wrap *ngFor="let item of data">
-			{{item.section}}
-		</ion-input>-->
-		<div item-content *ngFor="let item of data">{{item.section}}</div>
+
+		<div text-wrap *ngFor="let item of data">
+
+			<!-- Section "title" (image) -->
+			<div *ngIf="item.section === 'title'">
+				<img src="{{item.value}}" class="logo" />
+			</div>
+
+			<!-- Section "info" -->
+			<div *ngIf="item.section === 'info'">
+				<ion-item *ngIf="item.type === 'edit'">
+				    <ion-label fixed>{{item.value}}</ion-label>
+				    <ion-input type="text" value=""></ion-input>
+				</ion-item>
+
+				<div *ngIf="item.type === 'radioButton'">
+					<ion-list radio-group>
+						<div text-wrap *ngFor="let choice of item.value">
+							<ion-item>
+								<ion-label>{{choice}}</ion-label>
+						    	<ion-radio value="{{choice}}"></ion-radio>
+
+						    </ion-item>
+						</div>
+					</ion-list>
+				</div>
+			</div>
+
+			<!-- Section "abonnement" 
+			<div *ngIf="item.section === 'abonnement'">
+				<div *ngIf="item.type === 'label'">
+				    <h4 fixed>{{item.value}}</h4>
+				</div>
+			</div>-->
+
+			<!-- Section "newsletter" 
+			<div *ngIf="item.section === 'newsletter'">
+				<div *ngIf="item.type === 'label'">
+				    <h4 fixed>{{item.value}}</h4>
+				</div>
+			</div>-->
+
+		</div>
+
 	</ion-list>
 </ion-content>

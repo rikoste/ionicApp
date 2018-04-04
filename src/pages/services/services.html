@@ -6,7 +6,7 @@
 
 <ion-content padding>
 	<ion-list >
-		<button ion-item text-wrap *ngFor="let item of services" (click)="serviceClicked(item.elements)">
+		<button ion-item text-wrap *ngFor="let item of services" (click)="serviceClicked(item.title, item.elements)">
 			{{item.title}}
 		</button>
 	</ion-list>

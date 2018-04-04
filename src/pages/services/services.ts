@@ -33,8 +33,11 @@ export class ServicesPage {
 	/**
 	 *	Test
 	 */
-	serviceClicked(serviceData) {
+	serviceClicked(serviceTitle, serviceData) {
+		console.log('Données du service : ');
 		console.log(serviceData);
+
+		this.globalData.setTitle(serviceTitle);
 		this.globalData.addGlobalData(serviceData);
 		this.navCtrl.parent.select(1);
 	}
