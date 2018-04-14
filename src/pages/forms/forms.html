@@ -14,6 +14,7 @@
 			<!-- Section "title" (image) -->
 			<div *ngIf="item.section === 'title'">
 				<img src="{{item.value}}" class="logo" />
+				<br /><h4 fixed>Vos infos</h4>
 			</div>
 
 			<!-- Section "info" -->
@@ -35,20 +36,37 @@
 				</div>
 			</div>
 
-			<!-- Section "abonnement" 
+			<!-- Section "abonnement" -->
 			<div *ngIf="item.section === 'abonnement'">
 				<div *ngIf="item.type === 'label'">
-				    <h4 fixed>{{item.value}}</h4>
+				    <br /><h4 fixed>{{item.value}}</h4>
 				</div>
-			</div>-->
+			    <div *ngIf="item.type === 'radioButton'">
+			    	<ion-list radio-group>
+						<div text-wrap *ngFor="let choice of item.value">
+							<ion-item>
+								<ion-label>{{choice}}</ion-label>
+						    	<ion-radio value="{{choice}}"></ion-radio>
+						    </ion-item>
+						</div>
+					</ion-list>
+			   	</div>
+			</div>
 
-			<!-- Section "newsletter" 
+			<!-- Section "newsletter" -->
 			<div *ngIf="item.section === 'newsletter'">
 				<div *ngIf="item.type === 'label'">
-				    <h4 fixed>{{item.value}}</h4>
+				    <br /><h4 fixed>{{item.value}}</h4>
 				</div>
-			</div>-->
-
+			</div>
+			<div *ngIf="item.type === 'switch'">
+				<ion-list>
+				  	<ion-item>
+				    	<ion-label>S'inscrire</ion-label>
+				    	<ion-toggle [(ngModel)]=item.value name="{{item.value}}"></ion-toggle>
+				  	</ion-item>
+				</ion-list>
+			</div>
 		</div>
 
 		<button ion-button type="submit" block>S'inscrire</button>
