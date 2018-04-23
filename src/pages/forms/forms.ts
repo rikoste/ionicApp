@@ -17,8 +17,7 @@ export class FormsPage {
   formData: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public globalData: GlobalData, public alertCtrl: AlertController) {
-      this.formData = {};
-
+    this.formData = [];
   }
 
   subForm() {
@@ -42,12 +41,13 @@ export class FormsPage {
       alert.present();
     }else{
         this.title = this.globalData.getTitle();
-        this.data = this.globalData.getGlobalData();
+        this.data = this.globalData.getGlobalData();       
     };
 
 
   	console.log('Données chargées dans forms : ');
     console.log(this.data);
+
   }
 
 }
