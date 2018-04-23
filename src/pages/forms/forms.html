@@ -26,7 +26,7 @@
 				</ion-item>
 
 				<div *ngIf="item.type === 'radioButton'">
-					<ion-list radio-group>
+					<ion-list radio-group [(ngModel)]=formData[item.value] [ngModelOptions]="{standalone: true}">
 						<div text-wrap *ngFor="let choice of item.value">
 							<ion-item>
 								<ion-label>{{choice}}</ion-label>
@@ -43,7 +43,7 @@
 				    <br /><h4 fixed>{{item.value}}</h4>
 				</div>
 			    <div *ngIf="item.type === 'radioButton'">
-			    	<ion-list radio-group>
+			    	<ion-list radio-group [(ngModel)]=formData[item.value] [ngModelOptions]="{standalone: true}">
 						<div text-wrap *ngFor="let choice of item.value">
 							<ion-item>
 								<ion-label>{{choice}}</ion-label>
