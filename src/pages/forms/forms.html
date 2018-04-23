@@ -6,22 +6,23 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-	<form>
+<ion-content padding >
+
+	<form (ngSubmit)="subForm()">
 
 		<div text-wrap *ngFor="let item of data">
 
-			<!-- Section "title" (image) -->
+			<!--Section "title" (image)-->
 			<div *ngIf="item.section === 'title'">
 				<img src="{{item.value}}" class="logo" />
 				<br /><h4 fixed>Vos infos</h4>
 			</div>
 
-			<!-- Section "info" -->
+			<!--Section "info"-->
 			<div *ngIf="item.section === 'info'">
 				<ion-item *ngIf="item.type === 'edit'">
 				    <ion-label fixed>{{item.value}}</ion-label>
-				    <ion-input type="text" value=""></ion-input>
+				    <ion-input required type="text" [(ngModel)]="formData.lastname" name="lastname"></ion-input>
 				</ion-item>
 
 				<div *ngIf="item.type === 'radioButton'">
@@ -36,7 +37,7 @@
 				</div>
 			</div>
 
-			<!-- Section "abonnement" -->
+			<!--Section "abonnement"-->
 			<div *ngIf="item.section === 'abonnement'">
 				<div *ngIf="item.type === 'label'">
 				    <br /><h4 fixed>{{item.value}}</h4>
@@ -53,7 +54,7 @@
 			   	</div>
 			</div>
 
-			<!-- Section "newsletter" -->
+			<!--Section "newsletter"-->
 			<div *ngIf="item.section === 'newsletter'">
 				<div *ngIf="item.type === 'label'">
 				    <br /><h4 fixed>{{item.value}}</h4>
@@ -63,7 +64,7 @@
 				<ion-list>
 				  	<ion-item>
 				    	<ion-label>S'inscrire</ion-label>
-				    	<ion-toggle [(ngModel)]=item.value name="{{item.value}}"></ion-toggle>
+				    	<ion-toggle [(ngModel)]=item.value [ngModelOptions]="{standalone: true}"></ion-toggle>
 				  	</ion-item>
 				</ion-list>
 			</div>
@@ -71,4 +72,5 @@
 
 		<button ion-button type="submit" block>S'inscrire</button>
     </form>
+-->
 </ion-content>
