@@ -6,6 +6,7 @@ import { Device } from '@ionic-native/device';
   selector: 'page-about',
   templateUrl: 'about.html'
 })
+
 export class AboutPage {
   uui:any;
   model:any;
@@ -17,7 +18,7 @@ export class AboutPage {
   
   constructor(public navCtrl: NavController,private device: Device) {
  
- 	this.uuid     = this.device.uuid;
+ 	this.uui      = this.device.uuid;
 	this.model    = this.device.model
 	this.platform = this.device.platform
 	this.version  = this.device.version
