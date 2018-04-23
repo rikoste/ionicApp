@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { GlobalData } from '../../providers/globaldata/globaldata';
 import { AlertController } from 'ionic-angular';
-import { SchemaFormModule, WidgetRegistry } from "angular2-schema-form";
-import { IonWidgetRegistry, IonSchemaFormModule } from "ionic-schema-form";
 
 @Component({
   selector: 'page-forms',

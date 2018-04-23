@@ -4,8 +4,6 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 
-import { SchemaFormModule, WidgetRegistry } from "angular2-schema-form";
-import { IonWidgetRegistry, IonSchemaFormModule } from "ionic-schema-form";
 import { MyApp } from './app.component';
 
 import { FormsPage } from '../pages/forms/forms';
@@ -18,6 +16,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpProvider } from '../providers/http/http';
 import { GlobalData } from '../providers/globaldata/globaldata';
+
+import { Device } from '@ionic-native/device';
 
 @NgModule({
   declarations: [
@@ -32,8 +32,6 @@ import { GlobalData } from '../providers/globaldata/globaldata';
     BrowserModule,
 	  HttpModule,
 	  HttpClientModule,
-    SchemaFormModule,
-    IonSchemaFormModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -50,7 +48,8 @@ import { GlobalData } from '../providers/globaldata/globaldata';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     HttpProvider,
-    GlobalData
+    GlobalData,
+    Device
   ]
 })
 export class AppModule {}
