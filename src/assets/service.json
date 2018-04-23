@@ -78,6 +78,18 @@
 					"mandatory": "true"
 				},
 				{
+					"section": "info",
+					"type": "edit",
+					"value": "Ville",
+					"mandatory": "false"
+				},
+				{
+					"section": "Style",
+					"type": "label",
+					"value": "Styles",
+					"mandatory": "true"
+				},
+				{
 					"section": "Style",
 					"type": "button",
 					"value": "Metal",
@@ -88,12 +100,6 @@
 					"type": "button",
 					"value": "Rock",
 					"mandatory": "true"
-				},
-				{
-					"section": "info",
-					"type": "edit",
-					"value": "Ville",
-					"mandatory": "false"
 				},
 				{
 					"section": "abonnement",

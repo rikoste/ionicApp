@@ -41,7 +41,12 @@ export class FormsPage {
       alert.present();
     }else{
         this.title = this.globalData.getTitle();
-        this.data = this.globalData.getGlobalData();       
+        this.data = this.globalData.getGlobalData();
+
+        /*for(var i = 0; i < this.data.length; i++){
+          this.data[i].label = this.data[i].value;
+        }*/
+        
     };
 
 

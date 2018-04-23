@@ -37,6 +37,17 @@
 				</div>
 			</div>
 
+			<!-- Section style -->
+			<div *ngIf="item.section === 'Style'">
+				<div *ngIf="item.type === 'label'">
+				    <br /><h4 fixed>{{item.value}}</h4>
+				</div>
+				<ion-item *ngIf="item.type === 'button'">
+				    <ion-label fixed>{{item.value}}</ion-label>
+				    <ion-checkbox required type="text" [(ngModel)]=formData[item.value] [ngModelOptions]="{standalone: true}"></ion-checkbox>
+				</ion-item>
+			</div>
+
 			<!--Section "abonnement"-->
 			<div *ngIf="item.section === 'abonnement'">
 				<div *ngIf="item.type === 'label'">
