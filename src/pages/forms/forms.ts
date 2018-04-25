@@ -29,7 +29,7 @@ export class FormsPage {
       this.storage.set(datalength.toString(), dat);
     });
 
-    this.navCtrl.parent.select(2);
+    this.navCtrl.parent.select(0);
   }
 
   ionViewDidEnter(){

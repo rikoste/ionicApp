@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import { AlertController } from 'ionic-angular';
 
 @Component({
   selector: 'page-results',
@@ -11,10 +12,13 @@ export class ResultsPage {
 	result: any;
 	keys: any;
 
-  	constructor(private storage: Storage, public navCtrl: NavController) {
+  	constructor(private storage: Storage, public navCtrl: NavController, public alertCtrl: AlertController) {
+  		this.result = [];
+
 	}
 
 	ionViewDidEnter(){
+
 	    this.storage.length().then(datalength => {
 	    	this.result = [];
 
@@ -24,8 +28,6 @@ export class ResultsPage {
 					console.log(this.result);
 			   	});
 	    	}
-
-	 	
 		});
 	}
 
