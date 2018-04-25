@@ -8,13 +8,16 @@ import { Storage } from '@ionic/storage';
 })
 export class ResultsPage {
 
-  constructor(private storage: Storage, public navCtrl: NavController) {
+	result: any;
 
-    this.storage.length().then(datalength => {
-		this.storage.get(datalength-1).then((val) => {
-		  console.log('Your json is', val);
-		});
-   });
+  	constructor(private storage: Storage, public navCtrl: NavController) {
+	}
 
-}
+	ionViewDidEnter(){
+	    this.storage.length().then(datalength => {
+			this.storage.get((datalength-1).toString()).then((val) => {
+			  console.log('Your json is', val);
+			});
+	   	});
+	}
 }

@@ -26,7 +26,7 @@ export class FormsPage {
     let dat = this.formData;
 
     this.storage.length().then(datalength => {
-      this.storage.set(datalength, dat);
+      this.storage.set(datalength.toString(), dat);
     });
   }
 
