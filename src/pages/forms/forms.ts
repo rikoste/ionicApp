@@ -3,6 +3,7 @@ import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms'
 import { NavController, NavParams } from 'ionic-angular';
 import { GlobalData } from '../../providers/globaldata/globaldata';
 import { AlertController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 
 @Component({
@@ -16,13 +17,15 @@ export class FormsPage {
 	data: any;
   formData: any;
 
-  constructor(private formBuilder: FormBuilder, public navCtrl: NavController, public navParams: NavParams, public globalData: GlobalData, public alertCtrl: AlertController) {
+  constructor(private storage: Storage, public navCtrl: NavController, public navParams: NavParams, public globalData: GlobalData, public alertCtrl: AlertController) {
     this.formData  = [];
   }
 
   subForm() {
 
-    console.log(this.formData);
+    this.storage.set('test', this.formData);
+    
+    console.log(this.storage.get('test'));
 
   }
 

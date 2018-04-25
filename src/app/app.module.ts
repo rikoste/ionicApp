@@ -17,6 +17,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpProvider } from '../providers/http/http';
 import { GlobalData } from '../providers/globaldata/globaldata';
 
+import { IonicStorageModule } from '@ionic/storage';
 import { Device } from '@ionic-native/device';
 
 @NgModule({
@@ -32,7 +33,8 @@ import { Device } from '@ionic-native/device';
     BrowserModule,
 	  HttpModule,
 	  HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
