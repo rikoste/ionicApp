@@ -9,15 +9,28 @@ import { Storage } from '@ionic/storage';
 export class ResultsPage {
 
 	result: any;
+	keys: any;
 
   	constructor(private storage: Storage, public navCtrl: NavController) {
 	}
 
 	ionViewDidEnter(){
 	    this.storage.length().then(datalength => {
-			this.storage.get((datalength-1).toString()).then((val) => {
-			  console.log('Your json is', val);
-			});
-	   	});
+	    	this.result = [];
+
+	    	for(var i = 0; i < datalength; i++){
+				this.storage.get((i).toString()).then((val) => {
+					this.result.push(val);
+					console.log(this.result);
+			   	});
+	    	}
+
+	 	
+		});
+	}
+
+	public getKeys(data){
+	    this.keys = Object.keys(data);
+	    return true;
 	}
 }
