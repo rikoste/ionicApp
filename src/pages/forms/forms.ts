@@ -18,14 +18,18 @@ export class FormsPage {
   formData: any;
 
   constructor(private storage: Storage, public navCtrl: NavController, public navParams: NavParams, public globalData: GlobalData, public alertCtrl: AlertController) {
-    this.formData  = [];
+    this.formData  = {};
   }
 
   subForm() {
+    this.formData.Service = this.title;
+    let dat = this.formData;
 
-    this.storage.set('test', this.formData);
-    
-    console.log(this.storage.get('test'));
+    this.storage.length().then(datalength => {
+      console.log(datalength);
+      this.storage.set(datalength, dat);
+
+    });
 
   }
 

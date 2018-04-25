@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-results',
@@ -7,8 +8,10 @@ import { NavController } from 'ionic-angular';
 })
 export class ResultsPage {
 
-  constructor(public navCtrl: NavController) {
-
+  constructor(private storage: Storage, public navCtrl: NavController) {
+    this.storage.get('data').then((val) => {
+      console.log('Your json is', val);
+    });
   }
 
 }

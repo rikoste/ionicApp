@@ -18,6 +18,7 @@ import { HttpProvider } from '../providers/http/http';
 import { GlobalData } from '../providers/globaldata/globaldata';
 
 import { IonicStorageModule } from '@ionic/storage';
+import { NativeStorage } from '@ionic-native/native-storage';
 import { Device } from '@ionic-native/device';
 
 @NgModule({
@@ -51,6 +52,7 @@ import { Device } from '@ionic-native/device';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     HttpProvider,
     GlobalData,
+    NativeStorage,
     Device
   ]
 })
