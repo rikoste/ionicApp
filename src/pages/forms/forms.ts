@@ -26,11 +26,8 @@ export class FormsPage {
     let dat = this.formData;
 
     this.storage.length().then(datalength => {
-      console.log(datalength);
       this.storage.set(datalength, dat);
-
     });
-
   }
 
   ionViewDidEnter(){

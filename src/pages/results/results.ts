@@ -9,9 +9,12 @@ import { Storage } from '@ionic/storage';
 export class ResultsPage {
 
   constructor(private storage: Storage, public navCtrl: NavController) {
-    this.storage.get('data').then((val) => {
-      console.log('Your json is', val);
-    });
-  }
 
+    this.storage.length().then(datalength => {
+		this.storage.get(datalength-1).then((val) => {
+		  console.log('Your json is', val);
+		});
+   });
+
+}
 }
